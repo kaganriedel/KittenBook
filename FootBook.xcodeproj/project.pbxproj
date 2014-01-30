@@ -28,9 +28,9 @@
 		6D52A7751899ADDD0086FF78 /* PhotoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7741899ADDD0086FF78 /* PhotoCell.m */; };
 		6D52A7871899BEDD0086FF78 /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7861899BEDD0086FF78 /* ImageViewController.m */; };
 		6D52A78A1899EFE70086FF78 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7891899EFE70086FF78 /* CommentsViewController.m */; };
-		6D52A78D1899F4B10086FF78 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A78C1899F4B10086FF78 /* Photo.m */; };
-		6D52A7901899F4B20086FF78 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A78F1899F4B20086FF78 /* Comment.m */; };
-		6D52A7931899F4B20086FF78 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7921899F4B20086FF78 /* User.m */; };
+		6D52A79F189A10380086FF78 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A79E189A10380086FF78 /* Comment.m */; };
+		6D52A7A2189A10390086FF78 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7A1189A10390086FF78 /* User.m */; };
+		6D52A7A5189A10390086FF78 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = 6D52A7A4189A10390086FF78 /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,12 +73,12 @@
 		6D52A7861899BEDD0086FF78 /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		6D52A7881899EFE70086FF78 /* CommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentsViewController.h; sourceTree = "<group>"; };
 		6D52A7891899EFE70086FF78 /* CommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
-		6D52A78B1899F4B10086FF78 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		6D52A78C1899F4B10086FF78 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
-		6D52A78E1899F4B20086FF78 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
-		6D52A78F1899F4B20086FF78 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
-		6D52A7911899F4B20086FF78 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		6D52A7921899F4B20086FF78 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6D52A79D189A10380086FF78 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		6D52A79E189A10380086FF78 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		6D52A7A0189A10390086FF78 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		6D52A7A1189A10390086FF78 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		6D52A7A3189A10390086FF78 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		6D52A7A4189A10390086FF78 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,13 +155,13 @@
 				6D52A7881899EFE70086FF78 /* CommentsViewController.h */,
 				6D52A7891899EFE70086FF78 /* CommentsViewController.m */,
 				6D52A752189993A30086FF78 /* Images.xcassets */,
+				6D52A7A3189A10390086FF78 /* Photo.h */,
+				6D52A7A4189A10390086FF78 /* Photo.m */,
+				6D52A7A0189A10390086FF78 /* User.h */,
+				6D52A7A1189A10390086FF78 /* User.m */,
+				6D52A79D189A10380086FF78 /* Comment.h */,
+				6D52A79E189A10380086FF78 /* Comment.m */,
 				6D52A749189993A30086FF78 /* FootBook.xcdatamodeld */,
-				6D52A7911899F4B20086FF78 /* User.h */,
-				6D52A7921899F4B20086FF78 /* User.m */,
-				6D52A78E1899F4B20086FF78 /* Comment.h */,
-				6D52A78F1899F4B20086FF78 /* Comment.m */,
-				6D52A78B1899F4B10086FF78 /* Photo.h */,
-				6D52A78C1899F4B10086FF78 /* Photo.m */,
 				6D52A73B189993A30086FF78 /* Supporting Files */,
 			);
 			path = FootBook;
@@ -295,14 +295,14 @@
 			files = (
 				6D52A751189993A30086FF78 /* DetailViewController.m in Sources */,
 				6D52A74E189993A30086FF78 /* MasterViewController.m in Sources */,
-				6D52A7901899F4B20086FF78 /* Comment.m in Sources */,
 				6D52A7751899ADDD0086FF78 /* PhotoCell.m in Sources */,
+				6D52A79F189A10380086FF78 /* Comment.m in Sources */,
 				6D52A74B189993A30086FF78 /* FootBook.xcdatamodeld in Sources */,
 				6D52A7871899BEDD0086FF78 /* ImageViewController.m in Sources */,
-				6D52A7931899F4B20086FF78 /* User.m in Sources */,
+				6D52A7A2189A10390086FF78 /* User.m in Sources */,
 				6D52A745189993A30086FF78 /* AppDelegate.m in Sources */,
+				6D52A7A5189A10390086FF78 /* Photo.m in Sources */,
 				6D52A78A1899EFE70086FF78 /* CommentsViewController.m in Sources */,
-				6D52A78D1899F4B10086FF78 /* Photo.m in Sources */,
 				6D52A741189993A30086FF78 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

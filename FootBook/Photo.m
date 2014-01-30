@@ -7,6 +7,7 @@
 //
 
 #import "Photo.h"
+#import "Comment.h"
 #import "User.h"
 
 

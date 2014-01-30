@@ -15,15 +15,27 @@
 @import CoreData;
 
 
-@interface DetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DetailViewController () <UICollectionViewDataSource, UICollectionViewDelegate, NSFetchedResultsControllerDelegate>
 {
     __weak IBOutlet UICollectionView *detailCollectionView;
     User *user;
+    NSFetchedResultsController *fetchedResultsController;
 }
 
 @end
 
 @implementation DetailViewController
+
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    UICollectionViewFlowLayout *flow = detailCollectionView.collectionViewLayout;
+    flow.sectionInset = UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0);
+    detailCollectionView.collectionViewLayout = flow;
+    
+}
 
 #pragma mark - Managing the detail item
 
@@ -54,14 +66,7 @@
     [self performSegueWithIdentifier:@"CommentsSegue" sender:photo];
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    UICollectionViewFlowLayout *flow = detailCollectionView.collectionViewLayout;
-    flow.sectionInset = UIEdgeInsetsMake(12.0, 12.0, 12.0, 12.0);
-    detailCollectionView.collectionViewLayout = flow;
-}
+
 
 -(void)viewDidAppear:(BOOL)animated
 {

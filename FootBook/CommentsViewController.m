@@ -9,10 +9,10 @@
 #import "CommentsViewController.h"
 #import "Comment.h"
 
-@interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface CommentsViewController () <UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate>
 {
     __weak IBOutlet UITableView *commentsTableView;
-    
+    NSFetchedResultsController *fetchedResultsController;
 }
 
 @end
@@ -23,7 +23,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"Comment"];
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self.photo == %@", _photo];
+    fetchRequest.predicate = predicate;
+    fetchRequest.sortDescriptors = @[[[NSSortDescriptor alloc] initWithKey:@"date" ascending:NO]];
+    
+    fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:_photo.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    [fetchedResultsController performFetch:nil];
+    fetchedResultsController.delegate = self;
 }
 
 - (IBAction)onCommentMade:(UITextField *)textField
@@ -36,23 +44,36 @@
         [_photo addCommentsObject:comment];
         [_photo.managedObjectContext save:nil];
         textField.text = @"";
-        [commentsTableView reloadData];
+        
+//        [commentsTableView reloadData];
+
     }
+}
+
+-(void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    [commentsTableView reloadData];
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Comment *comment = _photo.comments.allObjects[indexPath.row];
+    Comment *comment = [fetchedResultsController objectAtIndexPath:indexPath];
+//    Comment *comment = _photo.comments.allObjects[indexPath.row];
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentsCell"];
     cell.textLabel.text = comment.message;
     
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@",comment.date];
+    NSDateFormatter *dateFormatter = [NSDateFormatter new];
+//    [dateFormatter setDateFormat:@"MM dd yyyy '-' HH:mm"];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    [dateFormatter setTimeStyle:NSDateFormatterShortStyle];
+    cell.detailTextLabel.text = [dateFormatter stringFromDate:comment.date];
     return cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _photo.comments.count;
+    return [fetchedResultsController.sections[section] numberOfObjects];
+//    return _photo.comments.count;
 }
 
 
